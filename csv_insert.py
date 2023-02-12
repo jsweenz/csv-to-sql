@@ -15,9 +15,9 @@ $ python csv_insert.py <csv file path> <destination .sql file path> <sql table n
 """
 import csv
 import sys
-sql_file = open(sys.argv[1], "w")
+sql_file = open(sys.argv[2], "w")
 table_name = sys.argv[3]
-with open(sys.argv[2], "r") as table:
+with open(sys.argv[1], "r") as table:
     reader =  csv.reader(table, delimiter=',')
     header_values = next(reader)
     types = next(reader)
